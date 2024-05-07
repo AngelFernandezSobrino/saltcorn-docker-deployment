@@ -22,7 +22,7 @@ services:
       - PGDATABASE=${PGDATABASE}
       - PGPASSWORD=${PGPASSWORD}
     labels: # If using traefik to reverse proxy into saltcorn
-      - traefik.http.routers.saltcornsecure.rule=Host(`saltcorn.${DOMAIN}`)
+      - traefik.http.routers.saltcornsecure.rule=Host(`${DOMAIN}`)
       - traefik.http.routers.saltcornsecure.entrypoints=websecure
       - traefik.http.routers.saltcorn.rule=Host(`saltcorn.docker.localhost`)
       - traefik.http.routers.saltcorn.entrypoints=web
